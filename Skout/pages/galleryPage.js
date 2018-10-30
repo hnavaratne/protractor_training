@@ -9,11 +9,16 @@
 
 var galleryPage = function () {
 
+    var path = require('path');
+
     //gallery page elements
     const fileUpload = element(by.id("file_upload"));
     const uploadedImage = element(by.xpath("//div[@data-ng-if='image.imageURL']/img"));
     const deleteImageBtn = element(by.xpath("//span[@data-ng-click='deleteProfileImage(image)']"));
     
+    //variables
+    var fileToUpload = '../images/ProfilePic.jpg';
+
     //gallery page functions
 
     // gallery Page URL. Use this function to navigate to gallery page.
@@ -23,7 +28,8 @@ var galleryPage = function () {
 
     // This function is used to upload an image
     this.uploadImage = function(){
-        fileUpload.sendKeys("C:\\Users\\Piyumi\\Desktop\\Protractor\\Git\\protractor_training\\Skout\\images\\ProfilePic.jpg");
+        var absolutePath = path.resolve(__dirname, fileToUpload);
+        fileUpload.sendKeys(absolutePath);
     }
 
     // This function is used to return the webelement, so that, it can be used to verify whther element is present or not
