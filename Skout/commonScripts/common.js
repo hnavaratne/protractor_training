@@ -12,7 +12,10 @@
 var commonActions = function () {
 
     var fs = require('fs');
+    var login = require('../pages/homePage');
 
+    var userName = 'virtusa.protractor@gmail.com';
+    var password = '1qaz2wsx@';
     /**
      * This common function will maximize the browser window
      */
@@ -53,6 +56,12 @@ var commonActions = function () {
             browser.switchTo().window(handles[1]);
         });
     };
+
+    this.loginToApp = function() {
+        login.get();
+        login.loginHomePage(userName, password);
+        browser.sleep(3000);
+    }
 
 }
 module.exports = new commonActions();

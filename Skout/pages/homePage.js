@@ -16,7 +16,7 @@ var homePage = function () {
     //Login page elements
     var username = element(by.id('username'));
     var password = element(by.id('password'));
-    var submitBtn = element(by.buttonText('Log in'));
+    var LoginBtn = element(by.buttonText('Log in'));
 
     var googlePlay = element(by.className('googleplay'));
     var appStore = element(by.className('appstore'));
@@ -31,12 +31,16 @@ var homePage = function () {
      * @param userName - Username of the user, will be taken from test
      * @param passwrd - Password of the user, will be taken from the test
      */
+    this.get = function () {
+        browser.get('https://www.skout.com/');
+    }
+
     this.loginHomePage = function loginHomePage(userName, passwrd) {
 
-        common.waitElementToBeClickable(username);
+        //common.waitElementToBeClickable(username);
         username.sendKeys(userName);
         password.sendKeys(passwrd);
-        submitBtn.click();
+        LoginBtn.click();
 
     };
 
