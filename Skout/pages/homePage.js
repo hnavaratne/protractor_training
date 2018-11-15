@@ -28,6 +28,13 @@ var HomePage = function () {
 
   var name = element(by.id('name'))
   var submitBtn = element(by.buttonText('Sign up'))
+
+  /**
+   * This function is to navigate to the page
+   */
+  this.navigateHome = function navigateHome () {
+    browser.get('https://www.skout.com/')
+  }
   /**
    * This is to login to the page
    * @param userName - Username of the user, will be taken from test
@@ -38,7 +45,6 @@ var HomePage = function () {
     username.sendKeys(userName)
     password.sendKeys(passwrd)
     loginBtn.click()
-    browser.sleep(5000)
   }
 
   /**
