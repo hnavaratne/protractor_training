@@ -1,17 +1,18 @@
+/* eslint-disable no-undef */
 exports.config = {
-  directConnect:true,
+  directConnect: true,
   framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
-  specs: ['./scripts/login.js'],
+  specs: ['./scripts/searchMatch.js'],
   allScriptsTimeout: 999999,
-    jasmineNodeOpts: {
-        defaultTimeoutInterval: 999999
-    },
-    onPrepare: function () {
-      browser.manage().window().maximize();
-      browser.manage().timeouts().implicitlyWait(5000);
-      browser.ignoreSynchronization = true;
-    },
+  jasmineNodeOpts: {
+    defaultTimeoutInterval: 999999
+  },
+  onPrepare: function () {
+    browser.manage().window().maximize()
+    browser.manage().timeouts().implicitlyWait(5000)
+    browser.ignoreSynchronization = true
+  },
   capabilities: {
     'browserName': 'chrome',
     'chromeOptions': {
@@ -23,5 +24,5 @@ exports.config = {
         }
       }
     }
-  },
+  }
 }
