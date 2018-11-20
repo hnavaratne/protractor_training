@@ -3,7 +3,11 @@ exports.config = {
   directConnect: true,
   framework: 'jasmine',
   seleniumAddress: 'http://localhost:4444/wd/hub',
+<<<<<<< HEAD
   specs: ['./scripts/searchMatch.js'],
+=======
+  specs: ['./scripts/uploadProfilePic.js'],
+>>>>>>> 413b2f5d33e685ffe6ded9ed1b3fd3dae2b0f346
   allScriptsTimeout: 999999,
   jasmineNodeOpts: {
     defaultTimeoutInterval: 999999
